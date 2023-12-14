@@ -30,6 +30,7 @@ from pyrogram import (
 #حقوق احمد @H1HHIH - @Z1ZZI
 #تطوير مودي الهيبه لو لمحتك مغير حقوق هنيكك @ELHYBA - @SOURCE_ZE
 ownerID = int("6581896306") #ايدي الادمن 
+token = Config.TG_BOT_TOKEN
 
 app = Client(
   name="session",
