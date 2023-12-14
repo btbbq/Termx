@@ -267,7 +267,7 @@ async def on_messages(c,m):
           botdb.set("db"+token.split(":")[0],data)
           return await m.reply(text,quote=True)
 
-@bot.on_callback_query()
+@app.on_callback_query()
 async def on_Callback(c,m):      
    if m.data == "broadcast" and (m.from_user.id == ownerID or m.from_user.id in botdb.get("db"+token.split(":")[0])["admins"]):
       await m.edit_message_text("• أرسل الإذاعة الآن ( صورة ، نص ، ملصق ، ملف ، صوت )\n• للإلغاء ارسل الغاء ",reply_markup=InlineKeyboardMarkup ([[InlineKeyboardButton ("رجوع",callback_data="back")]]))
@@ -513,6 +513,5 @@ async def generator_and_about(app,m):
         )
 
 app.start()
-bot.start()
 print("تم تشغيل البوت @ELHYBA")
 idle()
