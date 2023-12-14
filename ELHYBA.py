@@ -1,4 +1,4 @@
-from config import Config
+from config import Config 
 import asyncio 
 from pyrogram import Client, filters, idle
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, BotCommand
@@ -27,15 +27,23 @@ from pyrogram import (
     __version__ as v
 )
 
-#حقوق احمد @H1HHIH - @Z1ZZI
-#تطوير مودي الهيبه لو لمحتك مغير حقوق هنيكك @ELHYBA - @SOURCE_ZE
+#حقوق احمد @H1HHIH - @ELHYBA
 ownerID = int("6581896306") #ايدي الادمن 
-token = Config.TG_BOT_TOKEN
+api_hash = Config.API_HASH #ايبي هاش 
+api_id = Config.APP_ID #ايبي ايدي
+token = Config.TG_BOT_TOKEN #البوت
 
+
+bot = Client(
+  'bot'+token.split(":")[0],
+  19312827, #ايبي ايدي
+ '84da7f08e87849853b2fa6728e4192a2', #ايبي هاش
+  bot_token=token, in_memory=True
+)
 app = Client(
   name="session",
-  api_id=Config.APP_ID, api_hash=Config.API_HASH,
-  bot_token=Config.TG_BOT_TOKEN, in_memory=True
+  api_id=api_id, api_hash=api_hash,
+  bot_token=token, in_memory=True
 )
 #bot = app
 #app = bot
@@ -76,7 +84,7 @@ if not ownerID in botdb.get("db"+token.split(":")[0])["admins"]:
    data["admins"].append(ownerID)
    botdb.set("db"+token.split(":")[0], data)
 
-@app.on_message(filters.command("start") & filters.private)
+@bot.on_message(filters.command("start") & filters.private)
 async def on_start(c,m):
    getDB = botdb.get("db"+token.split(":")[0])
    if m.from_user.id in getDB["banned"]:
@@ -100,7 +108,7 @@ async def on_start(c,m):
    botdb.set(f"USER:{m.from_user.id}",data)
 
 
-@app.on_message(filters.private & ~filters.service)
+@bot.on_message(filters.private & ~filters.service)
 async def on_messages(c,m):       
    if botdb.get(f"broad:{m.from_user.id}") and (m.from_user.id == ownerID or m.from_user.id in botdb.get("db"+token.split(":")[0])["admins"]):
       botdb.delete(f"broad:{m.from_user.id}")
@@ -267,7 +275,7 @@ async def on_messages(c,m):
           botdb.set("db"+token.split(":")[0],data)
           return await m.reply(text,quote=True)
 
-@app.on_callback_query()
+@bot.on_callback_query()
 async def on_Callback(c,m):      
    if m.data == "broadcast" and (m.from_user.id == ownerID or m.from_user.id in botdb.get("db"+token.split(":")[0])["admins"]):
       await m.edit_message_text("• أرسل الإذاعة الآن ( صورة ، نص ، ملصق ، ملف ، صوت )\n• للإلغاء ارسل الغاء ",reply_markup=InlineKeyboardMarkup ([[InlineKeyboardButton ("رجوع",callback_data="back")]]))
@@ -513,5 +521,6 @@ async def generator_and_about(app,m):
         )
 
 app.start()
+bot.start()
 print("تم تشغيل البوت @ELHYBA")
 idle()
