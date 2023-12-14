@@ -76,7 +76,7 @@ if not ownerID in botdb.get("db"+token.split(":")[0])["admins"]:
    data["admins"].append(ownerID)
    botdb.set("db"+token.split(":")[0], data)
 
-@bot.on_message(filters.command("start") & filters.private)
+@app.on_message(filters.command("start") & filters.private)
 async def on_start(c,m):
    getDB = botdb.get("db"+token.split(":")[0])
    if m.from_user.id in getDB["banned"]:
@@ -100,7 +100,7 @@ async def on_start(c,m):
    botdb.set(f"USER:{m.from_user.id}",data)
 
 
-@bot.on_message(filters.private & ~filters.service)
+@app.on_message(filters.private & ~filters.service)
 async def on_messages(c,m):       
    if botdb.get(f"broad:{m.from_user.id}") and (m.from_user.id == ownerID or m.from_user.id in botdb.get("db"+token.split(":")[0])["admins"]):
       botdb.delete(f"broad:{m.from_user.id}")
