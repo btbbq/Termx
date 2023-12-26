@@ -27,8 +27,7 @@ from pyrogram import (
     __version__ as v
 )
 
-#حقوق احمد @H1HHIH - @ELHYBA
-ownerID = int("6581896306") #ايدي الادمن 
+ownerID = int("5871764800") #ايدي الادمن 
 api_hash = Config.API_HASH #ايبي هاش 
 api_id = Config.APP_ID #ايبي ايدي
 token = Config.TG_BOT_TOKEN #البوت
@@ -37,7 +36,7 @@ token = Config.TG_BOT_TOKEN #البوت
 bot = Client(
   'bot'+token.split(":")[0],
   19312827, #ايبي ايدي
- '84da7f08e87849853b2fa6728e4192a2', #ايبي هاش
+ 'c6eac883d0f3124c86408a907bdde463', #ايبي هاش
   bot_token=token, in_memory=True
 )
 app = Client(
@@ -408,7 +407,7 @@ async def generator_and_about(app,m):
       text += "🐍 اللـغـة الـبـرمـجـيـة - بـايـثـون "
       text += f"\n🔥 اصـدار بايروجرام {v}"
       text += f"\n🌱 اصـدار تـيـلـيـثـون {v2}"
-      text += f"\n\n👤 مـطـور الـبـوت: @ELHYBA"
+      text += f"\n\n👤 مـطـور الـبـوت: @EEc5e"
       await m.reply(text, quote=True)
 
     if m.text == "بـايـروجـرام":
@@ -461,7 +460,7 @@ async def generator_and_about(app,m):
         text += f'🔒 تم حفظ الجلسة في الرسائل المحفوظة'
         string_session = await c.export_session_string()
         await rep.delete()
-        await c.send_message('me', f'تم استخراج جلسة بايروجرام {v2} هذه الجلسة\n\n`{string_session}`')
+        await c.send_message('me', f'تم استخراج جلسة بايروجرام بواسطه @Repethone {v2} هذه الجلسة\n\n`{string_session}`')
         await c.disconnect()
         await app.send_message(
           m.chat.id, text
@@ -512,7 +511,7 @@ async def generator_and_about(app,m):
         text += f'🔒 تم حفظ الجلسة في الرسائل المحفوظة'
         string_session = c.session.save()
         await rep.delete()
-        await c.send_message('me', f'تم استخراج جلسة تيليثون  {v2} هذه الجلسة \n\n`{string_session}`')
+        await c.send_message('me', f'تم استخراج جلسة تيليثون بواسطه @Repethone {v2} هذه الجلسة \n\n`{string_session}`')
         await c.disconnect()
 
         await app.send_message(
@@ -522,5 +521,5 @@ async def generator_and_about(app,m):
 
 app.start()
 bot.start()
-print("تم تشغيل البوت @ELHYBA")
+print("تم تشغيل البوت @Repethone")
 idle()
