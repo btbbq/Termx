@@ -26,17 +26,17 @@ from pyrogram import (
     __version__ as v
 )
 
-#حقوق احمد @H1HHIH - @zzsszzz
-ownerID = int("6799580948") #ايدي الادمن 
-api_hash = "a9528fa819d420fc5c0b6d04a77e05f0" #ايبي هاش 
-api_id = 27726956 #ايبي ايدي
-token = "6714802206:AAHOYL9trC8EgcQ6gXIwKLykxdRDXMI9E0Q" #توكن البوت
+#حقوق احمد @H1HHIH - @FFrrTrF
+ownerID = int("6766128426") #ايدي الادمن 
+api_hash = "ab5d4207ca2212869822f58afee6be9e" #ايبي هاش 
+api_id = 26983509 #ايبي ايدي
+token = "6394986052:AAHPlrXwwEUKpZGcPkfP9ISpwnh0dyw8dLU" #توكن البوت
 
 
 bot = Client(
   'bot'+token.split(":")[0],
-  27726956, #ايبي ايدي
- 'a9528fa819d420fc5c0b6d04a77e05f0', #ايبي هاش
+  26983509, #ايبي ايدي
+ 'ab5d4207ca2212869822f58afee6be9e', #ايبي هاش
   bot_token=token, in_memory=True
 )
 app = Client(
@@ -407,7 +407,7 @@ async def generator_and_about(app,m):
       text += "🐍 اللـغـة الـبـرمـجـيـة - بـايـثـون "
       text += f"\n🔥 اصـدار بايروجرام {v}"
       text += f"\n🌱 اصـدار تـيـلـيـثـون {v2}"
-      text += f"\n\n👤 مـطـور الـبـوت: @zzsszzz"
+      text += f"\n\n👤 مـطـور الـبـوت: @FFrrTrF"
       await m.reply(text, quote=True)
 
     if m.text == "بـايـروجـرام":
