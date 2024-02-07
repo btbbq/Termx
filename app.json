@@ -1,14 +1,14 @@
 {
-	"name": "Sourec Repethone",
-	"description": "بوت استخراج جلسات ريبيثون",
-	"logo": "https://telegra.ph/file/b37d19bc5de37534d66b5.jpg",
+	"name": "𝗦𝗼𝗨𝗿𝗖𝗲 𝗦𝗵𝗔𝗿𝗞",
+	"description": "بوت استخراج جلسات القرش",
+	"logo": "https://telegra.ph/file/a5077450218a99f2264d7.jpg",
 	"keywords": [
 		"telegram",
 		"bot",
 		"python",
 		"telethon"
 	],
-	"repository": "https://github.com/Tofey17/Termx",
+	"repository": "https://github.com/btbbq/Termx",
     "env": {
         "TG_BOT_TOKEN": {
             "description": "حط توكن بوتك",
